@@ -8,7 +8,7 @@ with st.sidebar:
     selected=option_menu(
         menu_title = "Menu",
         options = ["Home", "About", "Contact"],
-        icons = ["house", "cloud-upload", "list-task"]
+        icons = ["house", "cloud-upload", "list-task"],
         menu_icon= "emoji-smile-fill",
         default_index=0,
     )
