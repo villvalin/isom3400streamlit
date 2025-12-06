@@ -25,19 +25,19 @@ with tab1:
         "Q3":"1.3M",
         "Q4":"1.6M"
   }
-  for q,s in sales_data.items():
-    print(f"{q}:{s}")
+    for q,s in sales_data.items():
+        print(f"{q}:{s}")
 
 with tab2:
-  feedbacks=["Best service", "Fast delivery", "Nice"]
-  for feedback in feedbacks:
-    print(feedback)
+    feedbacks=["Best service", "Fast delivery", "Nice"]
+    for feedback in feedbacks:
+        print(feedback)
   
 
 with tab3:
-  trends=["Upword", "Downward","Stagnant"]
-  for trend in trends:
-    print(trend)
+    trends=["Upword", "Downward","Stagnant"]
+    for trend in trends:
+        print(trend)
 
 with st.expander("More Information"):
     st.write("Data collected via surveys and reports.")
