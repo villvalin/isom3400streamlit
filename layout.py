@@ -63,6 +63,7 @@ with selected_quarter=="Q4 2024":
 
 selected_quarter = st.selectbox(
     "Select a quarter:", list(sales_data.keys())
+)
 
 base_rev = sales_data[selected_quarter]
 updated_rev = base_rev * (1 + growth / 100)
