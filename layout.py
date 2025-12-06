@@ -19,6 +19,7 @@ with col3:
 
 tab1, tab2, tab3 = st.tabs(["Sales Data", "Customer Insights", "Market Trends"])
 with tab1:
+    st.write("Content for Sales Data")
     sales_data={
         "Q1":"1.2M",
         "Q2":"1.5M",
@@ -29,12 +30,14 @@ with tab1:
         print(f"{q}:{s}")
 
 with tab2:
+    st.write("Content for Customer insights")
     feedbacks=["Best service", "Fast delivery", "Nice"]
     for feedback in feedbacks:
         print(feedback)
   
 
 with tab3:
+    st.write("Content for market trend")
     trends=["Upword", "Downward","Stagnant"]
     for trend in trends:
         print(trend)
