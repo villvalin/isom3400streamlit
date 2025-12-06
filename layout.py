@@ -27,20 +27,20 @@ with tab1:
         "Q4":"1.6M"
   }
     for q,s in sales_data.items():
-        print(f"{q}:{s}")
+        st.write(f"{q}:{s}")
 
 with tab2:
     st.write("Content for Customer insights")
     feedbacks=["Best service", "Fast delivery", "Nice"]
     for feedback in feedbacks:
-        print(feedback)
+        st.write(feedback)
   
 
 with tab3:
     st.write("Content for market trend")
     trends=["Upword", "Downward","Stagnant"]
     for trend in trends:
-        print(trend)
+        st.write(trend)
 
 with st.expander("More Information"):
     st.write("Data collected via surveys and reports.")
