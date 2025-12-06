@@ -52,17 +52,35 @@ sales_data={
     "Q3":"1.3M",
     "Q4":"1.6M"
   }
-if selected_quarter=="Q1 2024":
-  print(sales_data["Q1"])
-elif selected_quarter=="Q2 2024":
-  print(sales_data["Q2"])
-elif selected_quarter=="Q3 2024":
-  print(sales_data["Q3"])
-elif selected_quarter=="Q4 2024":
-  print(sales_data["Q4"])
+with selected_quarter=="Q1 2024":
+  st.write(sales_data["Q1"])
+with selected_quarter=="Q2 2024":
+  st.write(sales_data["Q2"])
+with selected_quarter=="Q3 2024":
+  st.write(sales_data["Q3"])
+with selected_quarter=="Q4 2024":
+  st.write(sales_data["Q4"])
 
-growth = st.slider("Adjust growth percentage:", 0, 50, 10)
+selected_quarter = st.selectbox(
+    "Select a quarter:", list(sales_data.keys())
 
+base_rev = sales_data[selected_quarter]
+updated_rev = base_rev * (1 + growth / 100)
+
+st.subheader("Selected Quarter Details")
+st.write(f"Base revenue for {selected_quarter}: **${base_rev:.1f}M**")
+st.write(f"Revenue after **{growth}%** growth: **${updated_rev:.2f}M**")
+
+# --- Apply growth to all quarters for the bar chart ---
+base_values = list(sales_data.values())
+updated_values = [rev * (1 + growth / 100) for rev in base_values]
+
+df = pd.DataFrame(
+    {"Quarter": list(sales_data.keys()), "Revenue (M$)": updated_values}
+).set_index("Quarter")
+
+st.subheader("Revenue by Quarter (with growth applied)")
+st.bar_chart(df)
 
 placeholder = st.empty()
 for i in range(5):
