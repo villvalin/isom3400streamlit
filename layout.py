@@ -22,13 +22,14 @@ with tab1:
   sales_data={
     "Q1":"1.2M",
     "Q2":"1.5M",
-    "Q3":"1.3M"
+    "Q3":"1.3M",
+    "Q4":"1.6M"
   }
   for q,s in sales_data.items():
     print(f"{q}:{s}")
 
 with tab2:
-  feedbacks=["Best service", "Fast delivery","Nice"]
+  feedbacks=["Best service", "Fast delivery", "Nice"]
   for feedback in feedbacks:
     print(feedback)
   
@@ -45,7 +46,8 @@ selected_quarter = st.selectbox("Select a quarter:", ["Q1 2024", "Q2 2024", "Q3 
  sales_data={
     "Q1":"1.2M",
     "Q2":"1.5M",
-    "Q3":"1.3M"
+    "Q3":"1.3M",
+    "Q4":"1.6M"
   }
 if selected_quarter=="Q1 2024":
   print(sales_data["Q1"])
@@ -53,6 +55,8 @@ elif selected_quarter=="Q2 2024":
   print(sales_data["Q2"])
 elif selected_quarter=="Q3 2024":
   print(sales_data["Q3"])
+elif selected_quarter=="Q4 2024":
+  print(sales_data["Q4"])
 
 growth = st.slider("Adjust growth percentage:", 0, 50, 10)
 
